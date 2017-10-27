@@ -1,8 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
-int main()
-{
-	int matriz[3][3];
-	
+int main(){
+	int ren,col;
+	int matrizA [3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+	int matrizB [3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+	int matrizC [3][3] = {{0,0,0},{0,0,0},{0,0,0}};	
+	for(ren=0;ren<3;ren++){	
+		for(col=0;col<3;col++){
+			matrizC[ren][col]=(matrizA[ren][col] * matrizB[ren][col])+(matrizA[ren][col+1] * matrizB[ren+1][col])+(matrizA[ren][col+2] * matrizB[ren+2][col]);
+			printf("%d ",matrizC[ren][col]);
+		}
+		printf("\n");
+	}
+	return 0;
 }
